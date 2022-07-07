@@ -1,19 +1,45 @@
-# Vue 3/JavaScript: Security and Identity Management
+# Vue 3/JavaScript: Starter SPA Code Sample
 
-Visit the ["Vue 3/JavaScript Code Samples: App Security in Action"](https://auth0.com/developers/hub/code-samples/spa/vue-javascript) section of the ["Auth0 Developer Hub"](https://auth0.com/developers/hub) to explore how you can secure Vue 3 applications written in JavaScript by implementing user authentication with Auth0.
+This JavaScript code sample demonstrates how to build a Single-Page Application (SPA) using Vue 3. This Vue 3 code sample builds the API server using the Vue Composition API.
 
-[![Vue 3/JavaScript Code Samples: App Security in Action](https://cdn.auth0.com/blog/hub/code-samples/spa/vue-javascript.png)](https://auth0.com/developers/hub/code-samples/spa/vue-javascript)
-  
-## Basic User Authentication Code Sample
+Visit the ["Vue 3/JavaScript Code Samples: API Security in Action"](https://auth0.com/developers/hub/code-samples/spa/vue-javascript) section of the ["Auth0 Developer Hub"](https://auth0.com/developers/hub) to explore how you can secure Vue 3 applications written in JavaScript by implementing endpoint protection and authorization with Auth0.
 
-This JavaScript code sample demonstrates **how to implement user authentication** in Vue 3 applications using Auth0. This Vue 3 code sample builds the Single-Page Application (SPA) using the Vue Composition API.
-
-Visit the ["Vue 3/JavaScript + Composition API Code Sample: User Authentication For Basic Apps"](https://auth0.com/developers/hub/code-samples/spa/vue-javascript/basic-authentication-with-composition-api) page for instructions on how to configure and run this code sample and how to integrate it with an API server of your choice to [create a full-stack code sample](https://auth0.com//developers/hub/code-samples/full-stack/hello-world/basic-access-control/spa).
-
-[![Vue 3/JavaScript + Composition API Code Sample: User Authentication For Basic Apps](https://cdn.auth0.com/blog/hub/code-samples/spa/vue-javascript/basic-authentication-with-composition-api.png)](https://auth0.com/developers/hub/code-samples/spa/vue-javascript/basic-authentication-with-composition-api)
-
-
+[![Vue 3/JavaScript Code Samples: API Security in Action](https://cdn.auth0.com/blog/hub/code-samples/spa/vue-javascript.png)](https://auth0.com/developers/hub/code-samples/spa/vue-javascript)
 
 ## Why Use Auth0?
 
 Auth0 is a flexible drop-in solution to add authentication and authorization services to your applications. Your team and organization can avoid the cost, time, and risk that come with building your own solution to authenticate and authorize users. We offer tons of guidance and SDKs for you to get started and [integrate Auth0 into your stack easily](https://auth0.com/developers/hub/code-samples/full-stack).
+
+## Set Up and Run the Vue 3 Project
+
+Install the project dependencies:
+
+```bash
+npm install
+```
+
+The starter Vue 3 project offers a functional application that consumes data from an external API to hydrate the user interface. For simplicity and convenience, the starter project simulates the external API locally using [`json-server`](https://github.com/typicode/json-server).
+
+However, you can also integrate this starter project with any of the ["Hello World" API code samples, which are available in multiple backend frameworks and programming languages](https://github.com/orgs/auth0-developer-hub/repositories?language=&q=api+hello-world&sort=&type=public).
+
+The compatible API server runs on `http://localhost:6060` by default. As such, to connect your Vue 3 application with that API server, create a `.env` file under the root project directory and populate it with the following environment variables:
+
+```bash
+VITE_API_SERVER_URL=http://localhost:6060
+```
+
+Next, execute the following command to run the JSON server API:
+
+```bash
+npm run api
+```
+
+Finally, open another terminal tab and execute this command to run your Vue 3 application:
+
+```bash
+npm run dev
+```
+
+Visit [`http://localhost:4040/`](http://localhost:4040/) to access the starter application.
+
+In the starter project, all the starter Vue 3 application routes are public. However, you can use Auth0 to get an ID token to hydrate the user profile information present on the `/profile` page with information from a real user. With Auth0, you can also get an access token to make a secure call to an external API to hydrate the messages present in the `/protected` and `/admin` pages.

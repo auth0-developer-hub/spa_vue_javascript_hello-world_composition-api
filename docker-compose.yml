@@ -1,0 +1,11 @@
+version: "3"
+services:
+  client:
+    build: .
+    image: spa_vue_js_hello-world_composition-api:starter
+    container_name: spa_vue_js_hello-world_composition-api_starter
+    ports:
+      - 4040:4040
+      - 6060:6060
+    env_file:
+      - .env
