@@ -2,10 +2,9 @@ version: "3"
 services:
   client:
     build: .
-    image: spa_vue_js_hello-world_composition-api:basic-authn
-    container_name: spa_vue_js_hello-world_composition-api_basic-authn
+    image: spa_vue_js_hello-world_composition-api:basic-authn-with-api
+    container_name: spa_vue_js_hello-world_composition-api_basic-authn-with-api
     ports:
       - 4040:4040
-      - 6060:6060
     env_file:
       - .env

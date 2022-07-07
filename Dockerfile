@@ -8,12 +8,9 @@ COPY package*.json ./
 RUN npm install
 
 COPY src src
-COPY json-server json-server
 COPY index.html index.html
 COPY vite.config.js vite.config.js
 
 EXPOSE 4040
 
-CMD [ "npx", "concurrently",  "npm run api", "npm run dev" ]
-
-EXPOSE 6060
+CMD [ "npm", "run", "dev" ]
