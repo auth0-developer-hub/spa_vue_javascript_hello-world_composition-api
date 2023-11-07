@@ -31,15 +31,10 @@
 import CodeSnippet from "@/components/code-snippet.vue";
 import PageLayout from "@/components/page-layout.vue";
 
-const user = {
-  nickname: "Customer",
-  name: "One Customer",
-  picture: "https://cdn.auth0.com/blog/hello-auth0/auth0-user.png",
-  updated_at: "2021-05-04T21:33:09.415Z",
-  email: "customer@example.com",
-  email_verified: false,
-  sub: "auth0|12345678901234567890",
-};
+import { useAuth0 } from "@auth0/auth0-vue";
 
-const code = JSON.stringify(user, null, 2);
+const { user } = useAuth0();
+
+const code = user ? JSON.stringify(user.value, null, 2) : "";
+console.log('user data has ', user.value);
 </script>
